@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset Margins */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* Body */
+
+body {
+  font-family: "Inter", sans-serif;
+  //   font-size: 1rem;
+
+  overflow-x: hidden;
+  display: grid;
+  place-items: center;
+  @include xl {
+    min-height: 100vh;
+  }
+}
+
+/* Images */
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Forms */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Animation */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// main
+main {
+  width: 100vw;
+
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  position: relative;
+  height: calc(100vh - 54px);
+
+  @include xl {
+    place-items: center;
+    display: grid;
+    height: 800px;
+  }
+}
+.curve {
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  @include xl {
+    height: 154px;
+  }
+}
+
+article{
+  display: flex;
+  flex-direction: column-reverse;
+}

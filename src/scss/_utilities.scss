@@ -1,0 +1,28 @@
+$display: flex grid none block inline-block;
+$layout-values: flex-start, flex-end, center, space-between, space-around;
+
+@each $val in $display {
+  .d-#{$val} {
+    display: $val;
+  }
+}
+
+// justify content classes
+@each $val in $layout-values {
+  .justify-#{$val} {
+    justify-content: $val;
+  }
+  .align-#{$val} {
+    align-items: $val;
+  }
+}
+
+.rounded {
+  border-radius: 90px;
+}
+
+.container {
+  width: 90%;
+  max-width: 920px;
+  margin-inline: auto;
+}

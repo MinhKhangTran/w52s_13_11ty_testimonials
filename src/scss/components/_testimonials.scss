@@ -1,0 +1,137 @@
+@use "sass:math";
+
+#testimonials {
+  width: 85%;
+  max-width: 1110px;
+  margin-inline: auto;
+}
+
+.testimonial .active.testimonials {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  position: relative;
+  border-radius: 30px;
+
+  opacity: 1;
+  @include xl {
+    min-height: 800px;
+    flex-direction: row;
+  }
+}
+article:not(.active) {
+  opacity: 0;
+  display: none;
+}
+
+.testi__left {
+  margin-top: math.div(81rem, 16);
+  position: relative;
+  text-align: center;
+
+  @include xl {
+    text-align: left;
+    margin-top: math.div(0rem, 16);
+    width: 635px;
+    z-index: 1000;
+  }
+  .bio__wrapper {
+    flex-direction: column;
+    margin-top: math.div(18rem, 16);
+    @include xl {
+      flex-direction: row;
+      gap: math.div(8rem, 16);
+      margin-top: math.div(33rem, 16);
+    }
+  }
+  .quotes {
+    position: absolute;
+    width: 60px;
+    top: -18%;
+    left: 45%;
+    transform: translateX(-50%);
+    @include xl {
+      width: 120px;
+      top: 0%;
+      left: 15%;
+      transform: translateY(-60%);
+    }
+  }
+}
+.testi__right {
+  padding-top: math.div(54rem, 16);
+
+  @include xl {
+    margin-top: math.div(0rem, 16);
+  }
+  .profile__pic {
+    border-radius: 4px;
+    width: 254px;
+    z-index: 100;
+    position: relative;
+    @include xl {
+      width: 540px;
+      position: absolute;
+      top: 50%;
+      right: 0%;
+      transform: translateY(-50%);
+      z-index: 100;
+    }
+  }
+  .bg {
+    position: absolute;
+    top: 5%;
+    left: 4%;
+    width: 325px;
+    @include md {
+      left: 16%;
+    }
+    @include xl {
+      width: 697px;
+      top: 49%;
+      left: auto;
+      right: -8%;
+      transform: translateY(-50%);
+    }
+  }
+}
+.testi__nav {
+  position: absolute;
+  z-index: 1000;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  width: 80px;
+  height: 40px;
+  background-color: white;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+  @include md {
+    top: 31%;
+    width: 100px;
+    height: 50px;
+    gap: math.div(16rem, 16);
+  }
+  @include xl {
+    gap: math.div(36rem, 16);
+    width: 112px;
+    height: 56px;
+    bottom: 13%;
+    left: 58%;
+    top: auto;
+  }
+  button {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover svg path {
+      stroke: $dark-blue;
+    }
+
+    svg path {
+      transition: $transition;
+    }
+  }
+}
